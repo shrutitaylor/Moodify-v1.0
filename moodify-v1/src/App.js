@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from './pages/login-page';
 import RegisterPage from './pages/register-page';
 import MoodSelector from './components/moodselection';
+import Home from './components/home';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
 
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/moodselection" element={<MoodSelector />} />

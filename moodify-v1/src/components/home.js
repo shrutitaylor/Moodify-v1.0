@@ -1,6 +1,9 @@
 import React from 'react';
 import shineIcon from '../images/shine-icon.png';
+import sunIcon from '../images/sun.png';
 import Register from './register';
+import CardCarousel from './card-carousel';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -28,8 +31,8 @@ const Home = () => {
             ))}
           </h1>
           {/* Subheading */}
-          <div className="flex md:flex-row gap-2 pl-36 sm:text-xs">
-            <h1 className="text-sm md:text-4xl font-medium font-outfit drop-shadow-md">
+          <div className="flex md:flex-row gap-2 pl-4 pr-3 lg:pl-36 ">
+            <h1 className="text-2xl md:text-4xl font-medium font-outfit drop-shadow-md">
               {Array.from("Let your").map((letter, index) => (
                 <span
                   key={index}
@@ -40,7 +43,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-sm md:text-5xl font-praise drop-shadow-md">
+            <h1 className="text-2xl md:text-5xl font-praise drop-shadow-md">
               {Array.from("mood").map((letter, index) => (
                 <span
                   key={index}
@@ -51,7 +54,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-sm md:text-4xl font-medium font-outfit drop-shadow-md">
+            <h1 className="text-2xl md:text-4xl font-medium font-outfit drop-shadow-md">
               {Array.from("set the").map((letter, index) => (
                 <span
                   key={index}
@@ -62,7 +65,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-sm md:text-5xl font-praise drop-shadow-md">
+            <h1 className="text-2xl md:text-5xl font-praise drop-shadow-md">
               {Array.from("music").map((letter, index) => (
                 <span
                   key={index}
@@ -83,7 +86,20 @@ const Home = () => {
         />
       </div>
     </div>
-    <Register />
+     {/* Sun Icon with "Start" Text */}
+     <div className="flex justify-center relative">
+        <div className="relative group">
+        <img
+          src={sunIcon}
+          alt="sun"
+          className="hover:scale-110 w-[180px] h-[180px] mt-5 transition-transform duration-300"
+        />
+          {/* "Start" Text */}
+          <Link to="/moodselection" className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-outfit justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
+            Start
+          </Link>
+        </div>
+      </div>
   </main>
   
   );
