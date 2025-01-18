@@ -89,11 +89,15 @@ const Home = () => {
      {/* Sun Icon with "Start" Text */}
      <div className="flex justify-center relative">
         <div className="relative group">
-        <img
+          <Link to="/moodselection"> 
+          <img
           src={sunIcon}
           alt="sun"
           className="hover:scale-110 w-[180px] h-[180px] mt-5 transition-transform duration-300"
+          
         />
+          </Link>
+       
           {/* "Start" Text */}
           <Link to="/moodselection" className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-outfit justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
             Start

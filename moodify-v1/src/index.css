@@ -1,3 +1,10 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply min-h-screen bg-gradient-to-t from-[#D8E8FF] to-[#359DFF];
+  }
+}

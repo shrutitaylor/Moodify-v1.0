@@ -6,29 +6,31 @@ import LoginPage from './pages/login-page';
 import RegisterPage from './pages/register-page';
 import MoodSelector from './components/moodselection';
 import Home from './components/home';
+import PlaylistDisplay from './components/playlist-display';
 
 const App = () => {
   return (
-    <>
     <div className="flex flex-col min-h-screen bg-gradient-to-t from-[#D8E8FF] to-[#359DFF]">
-      <Navbar /> {/* Navbar */}
-      <BrowserRouter>
-        <Routes>
+      {/* Navbar */}
+      <Navbar />
+      
+      {/* Main Content Area */}
+      <div className="flex-grow">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            {/* <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} /> */}
+            <Route path="/moodselection" element={<MoodSelector />} />
+            <Route path="/playlistdisplay" element={<PlaylistDisplay />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
 
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/moodselection" element={<MoodSelector />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        
-      </Routes>
-    </BrowserRouter>
-    <Footer /> {/* Footer */}
+      {/* Footer */}
+      <Footer />
     </div>
-    </>
-   
   );
 };
 
