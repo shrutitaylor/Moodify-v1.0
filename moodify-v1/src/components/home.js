@@ -1,8 +1,6 @@
 import React from 'react';
 import shineIcon from '../icons/shine-icon.png';
 import sunIcon from '../images/sun.png';
-import Register from './register';
-import CardCarousel from './card-carousel';
 import { Link } from 'react-router-dom';
 import useSound from "use-sound";
 import buttonSound from "../sounds/mouse-click.mp3";
@@ -11,7 +9,7 @@ const Home = () => {
   const [playSound] = useSound(buttonSound);
 
   return (
-    <main className="flex-grow px-5 md:px-[150px] lg:px-[150px]">
+    <main className="flex-grow   lg:px-[150px]">
     <div className="flex justify-center">
       <div className="flex flex-row text-white">
         {/* Left Shine Icon */}
@@ -35,8 +33,8 @@ const Home = () => {
             ))}
           </h1>
           {/* Subheading */}
-          <div className="flex md:flex-row gap-2 pl-2 pr-3 lg:pl-36 ">
-            <h1 className="text-lg md:text-4xl font-medium font-outfit drop-shadow-md">
+          <div className="flex md:flex-row gap-2 pl-2 pr-3 lg: pl-10 ">
+            <h1 className="text-lg md:text-4xl pl-5 font-medium font-outfit drop-shadow-md">
               {Array.from("Let your").map((letter, index) => (
                 <span
                   key={index}
@@ -104,7 +102,7 @@ const Home = () => {
        
           {/* "Start" Text */}
           <Link to="/moodselection" onClick={playSound}
-          className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-outfit justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
+          className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-praise justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
             Start
           </Link>
         </div>
