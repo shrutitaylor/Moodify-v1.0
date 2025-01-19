@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Moodify-v1.0/static/css/main.0f8cca86.css",
+    "main.js": "/Moodify-v1.0/static/js/main.61e7dc93.js",
+    "static/js/885.0ffcd30b.chunk.js": "/Moodify-v1.0/static/js/885.0ffcd30b.chunk.js",
+    "static/js/453.b44c1ceb.chunk.js": "/Moodify-v1.0/static/js/453.b44c1ceb.chunk.js",
+    "static/media/sad.png": "/Moodify-v1.0/static/media/sad.46665886f9f4f30b0743.png",
+    "static/media/love.png": "/Moodify-v1.0/static/media/love.da8365604a409441ff3e.png",
+    "static/media/happy.png": "/Moodify-v1.0/static/media/happy.e566196aec30f263f32c.png",
+    "static/media/anger.png": "/Moodify-v1.0/static/media/anger.fe970c7ed0e6e55f9b0e.png",
+    "static/media/moodify-logo.png": "/Moodify-v1.0/static/media/moodify-logo.6e2f8ab06d040f75bf68.png",
+    "static/media/sun.png": "/Moodify-v1.0/static/media/sun.1d5845b4f5a33733e773.png",
+    "static/media/mouse-click.mp3": "/Moodify-v1.0/static/media/mouse-click.97fd79673c8a8be35976.mp3",
+    "static/media/shine-icon.png": "/Moodify-v1.0/static/media/shine-icon.f57f49a654b93e6f431a.png",
+    "static/media/footer-bg.png": "/Moodify-v1.0/static/media/footer-bg.7dae48eec7b41bf77b42.png",
+    "static/media/play-button.png": "/Moodify-v1.0/static/media/play-button.5edac224e17c493b87f1.png",
+    "static/media/logout.png": "/Moodify-v1.0/static/media/logout.a78baedd6fc26d3affb0.png",
+    "static/media/volume-on.png": "/Moodify-v1.0/static/media/volume-on.1722d9e9544c8e954a97.png",
+    "index.html": "/Moodify-v1.0/index.html",
+    "main.0f8cca86.css.map": "/Moodify-v1.0/static/css/main.0f8cca86.css.map",
+    "main.61e7dc93.js.map": "/Moodify-v1.0/static/js/main.61e7dc93.js.map",
+    "885.0ffcd30b.chunk.js.map": "/Moodify-v1.0/static/js/885.0ffcd30b.chunk.js.map",
+    "453.b44c1ceb.chunk.js.map": "/Moodify-v1.0/static/js/453.b44c1ceb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f8cca86.css",
+    "static/js/main.61e7dc93.js"
+  ]
+}
