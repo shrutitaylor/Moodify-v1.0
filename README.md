@@ -20,7 +20,7 @@ Moodify is a simple yet innovative web application built with React that generat
 - **Frontend**: React.js
 - **Styling**: Tailwind CSS
 - **State Management**: React Hooks (`useState`, `useEffect`)
-- **Mock Data/API**: Integration with Spotify API
+- **Mock Data/API**: Integration with Last.fm API
 - **Deployment**: Github GH Pages
 
 ## Installation
@@ -52,11 +52,10 @@ Moodify is a simple yet innovative web application built with React that generat
 
 ## How It Works
 
-1. **Mood Selection**: Users select a mood by clicking on a mood card or button.
-2. **Playlist Generation**: The app fetches playlist data (from mock JSON or an API) based on the selected mood.
+1. **Mood Selection**: Users select a mood by clicking on a mood card.
+2. **Playlist Generation**: The app fetches playlist data (from lastFm API) based on the selected mood.
 3. **Playlist Display**: The selected playlist is displayed with song details and album art.
 4. **Random Mood**: Users can click the "Surprise Me" button to get a random mood and playlist.
-5. **Dark/Light Mode**: Toggle the app's theme seamlessly.
 
 ## Deployment
 
@@ -77,7 +76,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - React.js documentation: [https://reactjs.org/](https://reactjs.org/)
 - Tailwind CSS: [https://tailwindcss.com/](https://tailwindcss.com/)
-- Music APIs: Spotify
+- Music APIs: last.fm
 
 ---
 
