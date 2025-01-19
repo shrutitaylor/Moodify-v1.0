@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../images/moodify-logo.png';
 import logoutImg from '../images/logout.png';
+import volumeIcon from '../icons/volume-on.png';
+import volumeOffIcon from '../icons/volume-off.png';
 
 const Navbar = () => {
+  const [isMuted, setIsMuted] = useState(false); // State to track volume status
+
+  const volumeChange = () => {
+    const audio = document.querySelector("audio");
+    if (audio) {
+      if (audio.paused) {
+        audio.play();
+        setIsMuted(false); // Audio is playing
+      } else {
+        audio.pause();
+        setIsMuted(true); // Audio is paused
+      }
+    }
+  };
+
   return (
     <nav className="bg-transparent text-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -15,27 +32,13 @@ const Navbar = () => {
           />
         </a>
 
-        {/* Logout Button */}
-        <div className="hidden md:block">
-          <button
-            type="button"
-            className="space-x-2  px-4 py-2 rounded-lg border-black border-2 shadow-hardbutton text-black bg-button transform hover:scale-105 transition duration-300 ease-in-out font-medium rounded-sm text-sm px-5 py-2.5 text-center"
-          >
-           
-            <span className="hidden sm:inline">Logout</span>
-          </button>
-        </div>
-
-        {/* Mobile Logout Button */}
-        <div className="block md:hidden">
-          <button
-            type="button"
-            className="flex items-center justify-center bg-white text-white p-1 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out"
-          >
+        {/* Volume Button */}
+        <div className="p-1 h-10 w-10 rounded-full shadow-hardbutton bg-button border-black border-2 transform hover:scale-105 transition duration-300 ease-in-out">
+          <button onClick={volumeChange}>
             <img
-              src={logoutImg}
-              alt="Logout Icon"
-              className="h-6 w-6 rounded bg-white "
+              className="w-5 h-5 mt-1 ml-1"
+              src={isMuted ? volumeOffIcon : volumeIcon} // Toggle icon based on state
+              alt="Volume Icon"
             />
           </button>
         </div>
