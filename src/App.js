@@ -15,12 +15,11 @@ const App = () => {
       
       {/* Main Content Area */}
       <div className="flex-grow">
-        <BrowserRouter>
+        <BrowserRouter basename="/Moodify-v1.0">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Moodify-v1.0" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            {/* <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} /> */}
             <Route path="/moodselection" element={<MoodSelector />} />
             <Route path="/playlistdisplay" element={<PlaylistDisplay />} />
           </Routes>
