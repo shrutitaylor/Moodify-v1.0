@@ -98,7 +98,7 @@ const MoodSelector = () => {
             />
 
             {/* Text Overlay */}
-            <div className="absolute text-sadfont inset-0 top-[120px] sm:top-[155px] md:top-[220px] left-5 text-[50px] hover:text-sadbg text-[30px] sm:text-[50px] md:text-[50px] lg:text-[50px]">
+            <div className="absolute text-sadfont inset-0 top-[120px] sm:top-[155px] md:top-[220px] left-5 hover:text-sadbg text-[30px] sm:text-[50px] md:text-[50px] lg:text-[50px]">
             sad
             </div>
         </div>

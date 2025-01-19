@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="bg-transparent text-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="/Moodify-v1.0" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={logo}
             className="w-[100px] md:h-[70px] md:w-[150px] object-cover"
