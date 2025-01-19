@@ -5,6 +5,8 @@ import LoveImg from '../images/love.png';
 import HappyImg from '../images/happy.png';
 import SadImg from '../images/sad.png';
 import AngryImg from '../images/anger.png';
+import useSound from "use-sound";
+import buttonSound from "../sounds/mouse-click.mp3";
 
 
 const API_KEY = "9918700608b83a1d18b5af73e6ff9cb9";
@@ -13,55 +15,31 @@ const MoodSelector = () => {
   const [playlist, setPlaylist] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigation = useNavigate();
-  
-  const DISCOGS_API_TOKEN = "HjvscuxldJhFjnQYIUOVFMwHANMkMWQMQERBEhmY"; // Replace with your Discogs API token
-  const PROXY_URL = "https://cors-anywhere.herokuapp.com/"; // Or use your own proxy server
+  const [playSound] = useSound(buttonSound);
 
-  
-    const fetchDiscogsImage = async (trackName, artistName) => {
-      try {
-        const query = `${trackName} ${artistName}`;
-        const response = await axios.get(
-          `${PROXY_URL}https://api.discogs.com/database/search?q=${encodeURIComponent(query)}&type=release&token=${DISCOGS_API_TOKEN}`
-        );
-        return response.data.results?.[0]?.cover_image || null;
-      } catch (error) {
-        console.error("Error fetching image from Discogs:", error);
-        return null;
-      }
-    };
 
-// Update playlist with Discogs images
-const updatePlaylistWithDiscogsImages = async (playlist) => {
-  const updatedPlaylist = await Promise.all(
-    playlist.map(async (track) => {
-      const image = await fetchDiscogsImage(track.name, track.artist);
-      return { ...track, image };
-    })
-  );
-  setPlaylist(updatedPlaylist);
-};
+  // Fetch playlist 
+  const fetchPlaylist = async (mood) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${mood}&api_key=${API_KEY}&format=json`
+      );
+      const tracks = response.data.tracks.track.map((track) => ({
+        name: track.name,
+        artist: track.artist.name,
+        image: track.image && track.image[1] && track.image[1]['#text'] ? track.image[1]['#text'] : '/placeholder.png',
+        track_url: track.url,
+      }));
+      console.log("Fetched Tracks:", tracks); // Debugging
+      navigation("/playlistdisplay", { state: { playlist: tracks, loading: false, mood } });
+    } catch (error) {
+      console.error("Error fetching playlist:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-// Fetch playlist and update with Discogs images
-const fetchPlaylist = async (mood) => {
-  setLoading(true);
-  try {
-    const response = await axios.get(
-      `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${mood}&api_key=${API_KEY}&format=json`
-    );
-    const tracks = response.data.tracks.track.map((track) => ({
-      name: track.name,
-      artist: track.artist.name,
-      image: track.image[1]['#text'], // Small image from Last.fm
-    }));
-    // const updatedTracks = await updatePlaylistWithDiscogsImages(tracks);
-    navigation("/playlistdisplay", { state: { playlist: tracks, loading: false, mood } });
-  } catch (error) {
-    console.error("Error fetching playlist:", error);
-  } finally {
-    setLoading(false);
-  }
-};
 
   
   return (
@@ -73,7 +51,9 @@ const fetchPlaylist = async (mood) => {
     <div className="grid  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 py-6 font-praise  md:h-[300px]">
         {/* Love Card */}
         <div 
-        onClick={() => fetchPlaylist("love")}
+        onClick={() => 
+          {playSound();
+            fetchPlaylist("love");}}
         className="relative bg-lovebg p-4 rounded-lg shadow-md w-[200px] md:w-[250px] hover:animate-card-pop-up hover:bg-lovedark">
             {/* Image */}
             <img
@@ -88,7 +68,9 @@ const fetchPlaylist = async (mood) => {
             </div>
         </div>
          {/* Happy Card */}
-         <div onClick={() => fetchPlaylist("happy")}
+         <div onClick={() => 
+         {playSound();
+         fetchPlaylist("happy");}}
          className="relative bg-happybg pl-6 rounded-lg shadow-md w-[200px] md:w-[250px] hover:animate-card-pop-up hover:bg-happydark">
             {/* Image */}
             <img
@@ -104,7 +86,9 @@ const fetchPlaylist = async (mood) => {
         </div>
          {/* Sad Card */}
          <div 
-         onClick={() => fetchPlaylist("sad")}
+         onClick={() => 
+          {playSound();
+            fetchPlaylist("sad");}}
          className="relative bg-sadbg p-4 rounded-lg shadow-md w-[200px] md:w-[250px] hover:animate-card-pop-up hover:bg-saddark">
             {/* Image */}
             <img
@@ -119,7 +103,9 @@ const fetchPlaylist = async (mood) => {
             </div>
         </div>
          {/* Angry Card */}
-         <div onClick={() => fetchPlaylist("angry")}
+         <div onClick={() => 
+          {playSound();
+            fetchPlaylist("angry");}}
          className="relative bg-angrybg p-4 rounded-lg shadow-md w-[200px] md:w-[250px] hover:animate-card-pop-up hover:bg-angrydark">
             {/* Image */}
             <img
@@ -139,7 +125,9 @@ const fetchPlaylist = async (mood) => {
         </div>
        <div className='flex justify-center'>
         <button type="submit" 
-        onClick={() => fetchPlaylist("pop")}
+        onClick={() => 
+          {playSound();
+            fetchPlaylist("pop");}}
         className=" mt-10 w-150px border-black border-2 shadow-hardbutton text-black bg-button transform hover:scale-105 transition duration-300 ease-in-out font-medium rounded-md text-md px-5 py-2.5 text-center"
                      >Surprise me</button>
         </div>

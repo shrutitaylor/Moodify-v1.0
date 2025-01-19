@@ -1,5 +1,5 @@
 import React from 'react';
-import shineIcon from '../images/shine-icon.png';
+import shineIcon from '../icons/shine-icon.png';
 import Login from '../components/login';
 
 const LoginPage = () => {

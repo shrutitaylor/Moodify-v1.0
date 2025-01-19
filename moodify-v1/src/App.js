@@ -2,8 +2,6 @@ import React from 'react';
 import Navbar from './fragments/navbar';
 import Footer from './fragments/footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from './pages/login-page';
-import RegisterPage from './pages/register-page';
 import MoodSelector from './components/moodselection';
 import Home from './components/home';
 import PlaylistDisplay from './components/playlist-display';
@@ -11,6 +9,7 @@ import PlaylistDisplay from './components/playlist-display';
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-t from-[#D8E8FF] to-[#359DFF]">
+     
       {/* Navbar */}
       <Navbar />
       

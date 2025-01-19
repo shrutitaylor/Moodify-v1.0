@@ -1,13 +1,17 @@
 import React from 'react';
-import shineIcon from '../images/shine-icon.png';
+import shineIcon from '../icons/shine-icon.png';
 import sunIcon from '../images/sun.png';
 import Register from './register';
 import CardCarousel from './card-carousel';
 import { Link } from 'react-router-dom';
+import useSound from "use-sound";
+import buttonSound from "../sounds/mouse-click.mp3";
 
 const Home = () => {
+  const [playSound] = useSound(buttonSound);
+
   return (
-    <main className="flex-grow px-10 md:px-[150px] lg:px-[150px]">
+    <main className="flex-grow px-5 md:px-[150px] lg:px-[150px]">
     <div className="flex justify-center">
       <div className="flex flex-row text-white">
         {/* Left Shine Icon */}
@@ -19,7 +23,7 @@ const Home = () => {
         {/* Text Content */}
         <div className="flex flex-col justify-center text-white sm:text-xs">
           {/* Main Heading */}
-          <h1 className="drop-shadow-lg text-2xl md:text-4xl font-medium font-outfit pt-1 md:pt-5 pl-2 md:pl-8 mb-1 md:mb-4">
+          <h1 className="drop-shadow-lg text-lg md:text-4xl font-medium font-outfit pt-1 md:pt-5 pl-2 md:pl-8 mb-1 md:mb-4">
             {Array.from("Feel the vibe, find the beat").map((letter, index) => (
               <span
                 key={index}
@@ -31,8 +35,8 @@ const Home = () => {
             ))}
           </h1>
           {/* Subheading */}
-          <div className="flex md:flex-row gap-2 pl-4 pr-3 lg:pl-36 ">
-            <h1 className="text-2xl md:text-4xl font-medium font-outfit drop-shadow-md">
+          <div className="flex md:flex-row gap-2 pl-2 pr-3 lg:pl-36 ">
+            <h1 className="text-lg md:text-4xl font-medium font-outfit drop-shadow-md">
               {Array.from("Let your").map((letter, index) => (
                 <span
                   key={index}
@@ -43,7 +47,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-2xl md:text-5xl font-praise drop-shadow-md">
+            <h1 className="text-lg md:text-5xl font-praise drop-shadow-md">
               {Array.from("mood").map((letter, index) => (
                 <span
                   key={index}
@@ -54,7 +58,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-2xl md:text-4xl font-medium font-outfit drop-shadow-md">
+            <h1 className="text-lg md:text-4xl font-medium font-outfit drop-shadow-md">
               {Array.from("set the").map((letter, index) => (
                 <span
                   key={index}
@@ -65,7 +69,7 @@ const Home = () => {
                 </span>
               ))}
             </h1>
-            <h1 className="text-2xl md:text-5xl font-praise drop-shadow-md">
+            <h1 className="text-lg md:text-5xl font-praise drop-shadow-md">
               {Array.from("music").map((letter, index) => (
                 <span
                   key={index}
@@ -89,7 +93,7 @@ const Home = () => {
      {/* Sun Icon with "Start" Text */}
      <div className="flex justify-center relative">
         <div className="relative group">
-          <Link to="/moodselection"> 
+          <Link to="/moodselection" onClick={playSound}> 
           <img
           src={sunIcon}
           alt="sun"
@@ -99,7 +103,8 @@ const Home = () => {
           </Link>
        
           {/* "Start" Text */}
-          <Link to="/moodselection" className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-outfit justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
+          <Link to="/moodselection" onClick={playSound}
+          className="absolute mt-[130px] h-[21px] inset-0 flex items-center font-outfit justify-center text-black-500 group-hover:text-white font-medium text-3xl transition-all duration-300">
             Start
           </Link>
         </div>
