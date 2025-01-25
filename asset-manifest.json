@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Moodify-v1.0/static/css/main.0c3f0ad7.css",
-    "main.js": "/Moodify-v1.0/static/js/main.15fffd2c.js",
+    "main.js": "/Moodify-v1.0/static/js/main.0df60e20.js",
     "static/js/885.0ffcd30b.chunk.js": "/Moodify-v1.0/static/js/885.0ffcd30b.chunk.js",
     "static/js/453.b44c1ceb.chunk.js": "/Moodify-v1.0/static/js/453.b44c1ceb.chunk.js",
     "static/media/sad.png": "/Moodify-v1.0/static/media/sad.46665886f9f4f30b0743.png",
@@ -18,12 +18,12 @@
     "static/media/volume-on.png": "/Moodify-v1.0/static/media/volume-on.1722d9e9544c8e954a97.png",
     "index.html": "/Moodify-v1.0/index.html",
     "main.0c3f0ad7.css.map": "/Moodify-v1.0/static/css/main.0c3f0ad7.css.map",
-    "main.15fffd2c.js.map": "/Moodify-v1.0/static/js/main.15fffd2c.js.map",
+    "main.0df60e20.js.map": "/Moodify-v1.0/static/js/main.0df60e20.js.map",
     "885.0ffcd30b.chunk.js.map": "/Moodify-v1.0/static/js/885.0ffcd30b.chunk.js.map",
     "453.b44c1ceb.chunk.js.map": "/Moodify-v1.0/static/js/453.b44c1ceb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c3f0ad7.css",
-    "static/js/main.15fffd2c.js"
+    "static/js/main.0df60e20.js"
   ]
 }
