@@ -4,6 +4,7 @@ import sunIcon from '../images/sun.png';
 import { Link } from 'react-router-dom';
 import useSound from "use-sound";
 import buttonSound from "../sounds/mouse-click.mp3";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [playSound] = useSound(buttonSound);
@@ -92,10 +93,18 @@ const Home = () => {
      <div className="flex justify-center relative">
         <div className="relative group">
           <Link to="/moodselection" onClick={playSound}> 
-          <img
+          <motion.img 
+          animate={{scale: 1.2, rotate: 360}}
+          whileHover={
+            { scale: [1, 2,1], 
+              rotate: 360,
+          
+            }
+         } 
+         
           src={sunIcon}
           alt="sun"
-          className="hover:scale-110 w-[180px] h-[180px] mt-5 transition-transform duration-300"
+          className="hover:scale-110 w-[180px] h-[180px] mt-10 transition-transform duration-300"
           
         />
           </Link>
